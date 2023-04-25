@@ -1,6 +1,5 @@
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";
-import EditEmployee from "./EditEmployee";
 
 function Employees(props) {
   const { users, search, setSearch } = props;
@@ -45,7 +44,7 @@ function Employees(props) {
 
         <tbody>
           {filteredUsers.map((user) => (
-            <tr key={user.id}>
+            <tr key={user.id.value}>
               <td>
                 <img
                   src={user.picture.thumbnail}
@@ -58,12 +57,12 @@ function Employees(props) {
               <td>{user.phone}</td>
               <td>{user.gender}</td>
               <td>
-                <Link to={`/employee/edit/${user.id}`}>
+                <Link to={`/employee/edit/${user.email}`}>
                   <button className="p-6 py-1 bg-purple-800 text-white rounded hover:bg-purple-900 mr-4">
                     Edit
                   </button>
                 </Link>
-                <Link to={`/employee/delete/${user.id}`}>
+                <Link to={`/employee/delete/`}>
                   <button className="p-6 py-1 bg-red-800 text-white rounded hover:bg-red-900 mr-4">
                     Delete
                   </button>

@@ -1,10 +1,10 @@
-import Employees from "./components/Employees";
 import NavBar from "./components/NavBar";
-import EditEmployee from "./components/EditEmployee";
 import { useState, useEffect } from "react";
+import Employees from "./components/Employees";
 import { Routes, Route } from "react-router-dom";
-
+import EditEmployee from "./components/EditEmployee";
 import { fetchEmployees } from "./services/employees";
+import DeleteEmployee from "./components/DeleteEmployee";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -40,7 +40,8 @@ function App() {
             />
           }
         />
-        <Route path="/edit" component={EditEmployee} />
+        <Route path="/employee/edit/:id" element={<EditEmployee />} />
+        <Route path="/employee/delete/" element={<DeleteEmployee />} />
       </Routes>
     </>
   );
