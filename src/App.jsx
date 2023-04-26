@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import EditEmployee from "./components/EditEmployee";
 import { fetchEmployees } from "./services/employees";
 import DeleteEmployee from "./components/DeleteEmployee";
+import AddEmployee from "./components/AddEmployee";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -40,6 +41,7 @@ function App() {
             />
           }
         />
+        <Route path="/employee/add/" element={<AddEmployee />} />
         <Route path="/employee/edit/:id" element={<EditEmployee />} />
         <Route path="/employee/delete/" element={<DeleteEmployee />} />
       </Routes>

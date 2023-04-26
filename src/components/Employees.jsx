@@ -1,5 +1,5 @@
-import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 
 function Employees(props) {
   const { users, search, setSearch } = props;
@@ -57,6 +57,11 @@ function Employees(props) {
               <td>{user.phone}</td>
               <td>{user.gender}</td>
               <td>
+                <Link to={`/employee/add/`}>
+                  <button className="p-6 py-1 bg-blue-800 text-white rounded hover:bg-blue-900 mr-4">
+                    Add
+                  </button>
+                </Link>
                 <Link to={`/employee/edit/${user.email}`}>
                   <button className="p-6 py-1 bg-purple-800 text-white rounded hover:bg-purple-900 mr-4">
                     Edit

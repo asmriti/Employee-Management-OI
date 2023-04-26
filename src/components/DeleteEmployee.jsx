@@ -1,4 +1,4 @@
-function DeleteEmployee(user) {
+function DeleteEmployee() {
   return (
     <div className="container mx-auto px-4 py-8 w-2/4 bg-white mt-4">
       <h2 className="text-lg font-bold mb-4">Delete Employee</h2>
