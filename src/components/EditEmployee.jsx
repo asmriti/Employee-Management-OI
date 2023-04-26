@@ -1,7 +1,19 @@
+import { useState } from "react";
+
 function EditEmployee() {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [id, setID] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert(`The name you entered was : ${name}`);
+  };
+
   return (
     <div className="container mx-auto px-4 py-8 w-2/4">
-      <form className="bg-white p-6 rounded-xl">
+      <form className="bg-white p-6 rounded-xl" onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="name" className="block text-gray-700 font-bold mb-2">
             Name
@@ -11,6 +23,8 @@ function EditEmployee() {
             id="name"
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             placeholder="Name"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
           />
         </div>
 
@@ -23,7 +37,9 @@ function EditEmployee() {
             id="email"
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             placeholder="Email"
-          />{" "}
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+          />
         </div>
 
         <div className="mb-4">
@@ -35,6 +51,8 @@ function EditEmployee() {
             id="phone"
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             placeholder="Phone Number"
+            value={phone}
+            onChange={(event) => setPhone(event.target.value)}
           />
         </div>
 
@@ -47,6 +65,8 @@ function EditEmployee() {
             id="id-number"
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             placeholder="Employee ID"
+            value={id}
+            onChange={(event) => setID(event.target.value)}
           />
         </div>
 

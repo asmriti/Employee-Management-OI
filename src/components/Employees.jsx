@@ -19,18 +19,25 @@ function Employees(props) {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="mb-4">
-        <div className="flex bg-transparent border-4 rounded-xl h-12 items-center w-1/2 align-right p-4 text-center">
-          <input
-            className="text-center bg-transparent w-full outline-none text-start mr-2"
-            placeholder="Search"
-            value={search}
-            onChange={(event) => setSearch(event.target.value)}
-          />
-          <MagnifyingGlassIcon className="w-8 p-2 text-black" />
+        <div className="flex items-center justify-between">
+          <div className="flex bg-transparent border-4 rounded-xl h-12 items-center w-1/2 align-right p-4 text-center">
+            <input
+              className="text-center bg-transparent w-full outline-none text-start mr-2"
+              placeholder="Search"
+              value={search}
+              onChange={(event) => setSearch(event.target.value)}
+            />
+            <MagnifyingGlassIcon className="w-8 p-2 text-black" />
+          </div>
+          <Link to={`/employee/add/`}>
+            <button className="p-6 py-1 bg-blue-800 text-white rounded hover:bg-blue-900 mr-4 text-lg">
+              Add Employee
+            </button>
+          </Link>
         </div>
       </div>
 
-      <table className="table-auto w-full border-collapse bg-white border-transparent rounded-xl">
+      <table className="table-auto w-full border-collapse bg-white border-transparent rounded-xl content-center">
         <thead className="mt-4">
           <tr className="">
             <th className="px-4 py-2 text-left">Profile</th>
@@ -57,11 +64,6 @@ function Employees(props) {
               <td>{user.phone}</td>
               <td>{user.gender}</td>
               <td>
-                <Link to={`/employee/add/`}>
-                  <button className="p-6 py-1 bg-blue-800 text-white rounded hover:bg-blue-900 mr-4">
-                    Add
-                  </button>
-                </Link>
                 <Link to={`/employee/edit/${user.email}`}>
                   <button className="p-6 py-1 bg-purple-800 text-white rounded hover:bg-purple-900 mr-4">
                     Edit
