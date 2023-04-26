@@ -25,6 +25,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 <li>react</li>
 <li>react-dom</li>
 <li>vite</li>
+<li>tailwind</li>
 </ul>
 
 ## Getting Started
